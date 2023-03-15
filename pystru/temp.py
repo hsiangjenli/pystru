@@ -24,10 +24,15 @@ class CreateFoldersAndFiles:
             with open(file, "w", encoding="utf-8") as f:
                 f.write(template.render(**self.meta_data))
     
+    
     def __copy_files(self):
-        for dst, src in self.kwargs['copy'].items():
-            pass
-            # shutil.copyfile(dst=dst, src=src)
+        for _, (dir, file_name) in self.kwargs['copy'].items():
+            if dir != ".":
+                dst = os.path.join(dir, file_name)
+            else:
+                dst = file_name
+            
+            shutil.copyfile(dst=dst, src=os.path.join(self.templates_dir, dst))
 
 
 
