@@ -1,6 +1,5 @@
 clean:
 	rm -r -f test
-	mkdir test
 	rm -r -f pystru.egg-info
 	rm -r -f build
 
@@ -11,7 +10,7 @@ dev:
 	rm -r -f pystru.egg-info
 	rm -r -f build
 	pip install .
-	cd test; pystru basic --name test --demo true
+	cd test; pystru create --type basic --name test --demo True
 
 
 pypi:
