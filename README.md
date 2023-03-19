@@ -1,6 +1,6 @@
 <div align="center">
     <img width="250px" src="https://hsiangjenli.github.io/pystru/static/image/logo.svg">
-    <h1><strong>pystru</strong></h1>
+    <h1 style="color: #000"><strong>pystru</strong></h1>
     Provide a quick way to set up the structure of a Python project.
 </div>
 

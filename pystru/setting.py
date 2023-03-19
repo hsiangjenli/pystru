@@ -1,6 +1,5 @@
 import toml
 import os, shutil
-from .temp import set_environment
 from datetime import datetime
 
 # Setting up dir --------------------------------------------------------------------------------- #
@@ -10,7 +9,6 @@ demo_dir = os.path.join(templates_dir, "demo")
 
 # Setting up meta data --------------------------------------------------------------------------- #
 cur_year = datetime.now().year
-structure = toml.load(os.path.join(templates_dir, "structure.toml"))
 meta_data = {
     "year": cur_year
 }
