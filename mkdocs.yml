@@ -12,6 +12,7 @@ repo_name: pystru
 nav:
   - "Usage": index.md
   - "CLI": cli.md
+  - "templates": temp.md
 
 # TODO Theme ------------------------------------------------------------------------------------- #
 theme:
