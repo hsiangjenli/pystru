@@ -4,7 +4,7 @@
     [tiny.files]
         requirements = [".", "requirements.txt"]
         Makefile = [".", "Makefile"]
-    [tiny.folder]
+    [tiny.folders]
         docs = "docs"
 
 [basic]
