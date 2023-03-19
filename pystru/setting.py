@@ -15,10 +15,6 @@ meta_data = {
     "year": cur_year
 }
 
-# Setting up templates's location or file's dir -------------------------------------------------- #
-mkdocs_yml = set_environment(folder=templates_dir, template="mkdocs.yml")
-readme = set_environment(folder=templates_dir, template="README.md")
-
 # Create demo file ------------------------------------------------------------------------------- #
 def create_demo():
     os.makedirs("demo", exist_ok=True)
