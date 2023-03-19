@@ -1,0 +1,32 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    name: Deploy docs to GitHub Pages
+    runs-on: ubuntu-latest
+    steps:
+    
+      - name: Checkout 
+        uses: actions/checkout@v2
+      
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      
+      - name: Install Python dependencies
+        uses: py-actions/py-dependency-install@v4
+        with:
+          path: "requirements.txt"
+      
+      - name: Generate Site
+        run: |
+          mkdocs build
+      
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
