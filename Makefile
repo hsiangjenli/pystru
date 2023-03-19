@@ -22,6 +22,6 @@ upload:
 	python setup.py sdist --formats=zip
 	twine upload dist/*
 
-
-run:
-	pystru basic --name test --demo true
+serve:
+	cp README.md docs/index.md
+	mkdocs serve

@@ -1,0 +1,77 @@
+site_name: pystru
+site_url: https://hsiangjenli.github.io/pystru
+
+# TODO Folder for documents ---------------------------------------------------------------------- #
+docs_dir: docs
+copyright: Copyright &copy; 2023
+
+repo_url: https://github.com/hsiangjenli/pystru
+repo_name: pystru
+
+# TODO Documents path ---------------------------------------------------------------------------- #
+nav:
+  - "Usage": index.md
+  - "CLI": cli.md
+
+# TODO Theme ------------------------------------------------------------------------------------- #
+theme:
+  name: material
+  language: en
+
+  logo: "static/image/logo.svg"
+  favicon: "static/image/favicon.svg"
+
+  icon:
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+
+    repo: fontawesome/brands/git-alt
+
+  palette:
+    - scheme: default
+      primary: white
+      accent: indigo
+
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js
+  - javascripts/tables.js
+  - javascripts/config.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+markdown_extensions:
+  - footnotes
+  - admonition
+  - pymdownx.superfences
+  - pymdownx.snippets
+  - def_list
+  - pymdownx.tabbed
+  - attr_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+plugins:
+- search
+# TODO Automatic updates when files are modified in this path ------------------------------------ #
+- mkdocstrings:
+      watch:
+        - pystru
+
+# - enumerate-headings
