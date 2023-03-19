@@ -3,7 +3,8 @@ clean:
 	mkdir test
 	rm -r -f pystru.egg-info
 	rm -r -f build
-	pip install .
+
+
 dev:
 	rm -r -f test
 	mkdir test
@@ -12,13 +13,16 @@ dev:
 	pip install .
 	cd test; pystru basic --name test --demo true
 
+
 pypi:
 	python setup.py sdist --formats=zip
 	twine check dist/*
 
+
 upload:
 	python setup.py sdist --formats=zip
 	twine upload dist/*
+
 
 run:
 	pystru basic --name test --demo true
