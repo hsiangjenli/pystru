@@ -19,28 +19,6 @@ meta_data = {
 mkdocs_yml = set_environment(folder=templates_dir, template="mkdocs.yml")
 readme = set_environment(folder=templates_dir, template="README.md")
 
-gitignore = os.path.join(templates_dir, "copy/gitignore")
-
-tiny_files = list(structure["tiny"]["file"]["jinja2"].values())
-basic_files = list(structure["basic"]["file"]["jinja2"].values())
-basic_files.extend(tiny_files)
-
-tiny_folders = list(structure["tiny"]["folder"].values())
-# basic_folders = list(structure["basic"]["folder"].values())
-
-
-tiny = {
-    "files": tiny_files, # 需要使用 jinja2 render
-    "folders": tiny_folders,
-    ".gitignore": gitignore, # {dst: src} # 直接複製
-}
-
-basic = {
-    "files": basic_files,
-    "folders": tiny["folders"],
-}
-
-
 # Create demo file ------------------------------------------------------------------------------- #
 def create_demo():
     os.makedirs("demo", exist_ok=True)
